@@ -250,3 +250,43 @@ const booksSortedByPages = books
   .sort((a, b) => a.pages - b.pages)
   .map((book) => ({ title: book.title, pages: book.pages }));
 booksSortedByPages;
+
+// Working With Immutable Arrays
+// 1) Add book object to array
+const newBook = {
+  id: 6,
+  title: "The Hobbit",
+  author: "J.R.R. Tolkien",
+  publicationDate: "1937-09-21",
+  genres: ["adventure", "fantasy"],
+  hasMovieAdaptation: true,
+  pages: 310,
+  translations: {
+    spanish: "El Hobbit",
+  },
+  reviews: {
+    goodreads: {
+      rating: 4.53,
+      ratingsCount: 1200000,
+      reviewsCount: 45000,
+    },
+    librarything: {
+      rating: 4.48,
+      ratingsCount: 25000,
+      reviewsCount: 895,
+    },
+  },
+};
+
+const booksAfterAddition = [...books, newBook];
+booksAfterAddition;
+
+// 2) Remove a book object from array
+const booksAfterDeletion = booksAfterAddition.filter((book) => book.id !== 3);
+booksAfterDeletion;
+
+// 3) Update a book object in array
+const booksAfterUpdate = booksAfterDeletion.map((book) =>
+  book.id === 1 ? { ...book, pages: 1218 } : book
+);
+booksAfterUpdate;
