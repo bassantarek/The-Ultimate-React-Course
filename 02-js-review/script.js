@@ -145,7 +145,7 @@ function getBook(id) {
 
 // Destructuring
 
-const book = getBook(1);
+const book = getBook(2);
 const { title, author, publicationDate, genres, hasMovieAdaptation } = book;
 const [firstGenre, secondGenre, ...otherGenres] = genres;
 const newGenres = [...genres, "epic fantasy"];
@@ -175,5 +175,21 @@ console.log(`This book is ${pagesRange}`);
 
 //Arrow Function
 const getYear = (str) => str.split("-")[0];
-
 console.log(getYear(publicationDate));
+// falsy values: false, 0, "", null, undefined, NaN
+console.log(true && "Some string");
+console.log(false && "Some string");
+
+console.log(true || "Some string");
+console.log(false || "Some string");
+
+const spanishTranslation = book.translations.spanish || "No Spanish version";
+spanishTranslation;
+
+console.log(book.reviews.librarything.reviewsCount);
+
+const countWrong = book.reviews.librarything.reviewsCount || "No data";
+countWrong;
+
+const count = book.reviews.librarything.reviewsCount ?? "No data";
+count;
