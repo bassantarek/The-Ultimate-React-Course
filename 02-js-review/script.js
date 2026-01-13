@@ -202,3 +202,18 @@ function getTotalReviewCount(book) {
   return goodreadsCount + librarythingCount;
 }
 console.log(getTotalReviewCount(getBook(2)));
+
+// The Array map Method [same length as original array]
+const x = [1, 2, 3, 4, 5].map((el) => el * 2);
+console.log(x); // [2,4,6,8,10]
+
+const books = getBooks();
+const titles = books.map((book) => book.title);
+titles;
+
+const essentialData = books.map((book) => ({
+  title: book.title,
+  author: book.author,
+  reviewsCount: getTotalReviewCount(book),
+}));
+essentialData;
