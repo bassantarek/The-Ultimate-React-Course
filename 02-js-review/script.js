@@ -231,3 +231,22 @@ adventureBooks;
 // The Array reduce Method [boil the entire array down to a single value]
 const totalPages = books.reduce((sum, book) => sum + book.pages, 0);
 totalPages;
+
+// The Array sort Method [mutates the original array]
+const arr = [3, 7, 1, 9, 6];
+const sortedAsc = arr.sort((a, b) => a - b);
+sortedAsc;
+arr;
+const sortedDes = arr.sort((a, b) => b - a);
+sortedDes;
+arr;
+//If don't want to mutate original array
+const sortedAscNew = arr.slice().sort((a, b) => a - b);
+sortedAscNew;
+arr;
+
+const booksSortedByPages = books
+  .slice()
+  .sort((a, b) => a.pages - b.pages)
+  .map((book) => ({ title: book.title, pages: book.pages }));
+booksSortedByPages;
