@@ -203,7 +203,6 @@ function getTotalReviewCount(book) {
 }
 console.log(getTotalReviewCount(getBook(2)));
 
-// The Array map Method [same length as original array]
 const x = [1, 2, 3, 4, 5].map((el) => el * 2);
 console.log(x); // [2,4,6,8,10]
 
@@ -217,3 +216,14 @@ const essentialData = books.map((book) => ({
   reviewsCount: getTotalReviewCount(book),
 }));
 essentialData;
+
+// The Array filter Method [same length as original array]
+const longBooksWithMovie = books
+  .filter((book) => book.pages > 1000)
+  .filter((book) => book.hasMovieAdaptation);
+longBooksWithMovie;
+
+const adventureBooks = books
+  .filter((book) => book.genres.includes("adventure"))
+  .map((book) => book.title);
+adventureBooks;
