@@ -290,3 +290,10 @@ const booksAfterUpdate = booksAfterDeletion.map((book) =>
   book.id === 1 ? { ...book, pages: 1218 } : book
 );
 booksAfterUpdate;
+
+// Asynchronous JavaScript: Promises
+
+fetch("https://jsonplaceholder.typicode.com/todos")
+  .then((response) => response.json())
+  .then((data) => console.log("TESSSSSSSSSSSSSSSSSSSST", data));
+console.log("Bassant");
