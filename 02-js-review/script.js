@@ -297,3 +297,16 @@ fetch("https://jsonplaceholder.typicode.com/todos")
   .then((response) => response.json())
   .then((data) => console.log("TESSSSSSSSSSSSSSSSSSSST", data));
 console.log("Bassant");
+
+// Asynchronous JavaScript: Async/Await
+
+async function getTodos() {
+  const response = await fetch("https://jsonplaceholder.typicode.com/todos");
+  const data = await response.json();
+  console.log("DATA ASYNC AWAIT", data);
+  return data;
+}
+
+const todos = getTodos();
+console.log(todos);
+console.log("Bassant 2");
