@@ -99,7 +99,6 @@ root.render(
     <App />
   </React.StrictMode>,
 );
-
 // React.StrictMode is a tool for highlighting potential problems in an application.
 // It activates additional checks and warnings for its descendants.
 // Note that these checks are run in development mode only and do not impact the production build.
